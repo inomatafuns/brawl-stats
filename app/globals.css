@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Bangers&family=Noto+Color+Emoji&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-brawl-dark via-brawl-darker to-brawl-dark text-white;
+    font-family: 'Lilita One', 'Bangers', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-gradient-to-br from-brawl-card to-brawl-darker rounded-2xl p-6 shadow-brawl-lg border-2 border-brawl-blue/30;
+    background-image:
+      linear-gradient(135deg, rgba(27, 165, 245, 0.1) 0%, transparent 50%),
+      linear-gradient(to bottom right, #0f3460, #16213e);
+  }
+
+  .card-accent {
+    @apply bg-gradient-to-br from-brawl-accent/20 to-brawl-card rounded-2xl p-6 shadow-brawl-lg border-2 border-brawl-accent/50;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-b from-brawl-yellow to-yellow-600 hover:from-yellow-400 hover:to-yellow-500
+           text-brawl-dark font-bold py-3 px-8 rounded-xl
+           shadow-brawl active:shadow-none active:translate-y-1
+           transition-all duration-150 uppercase tracking-wide
+           border-2 border-yellow-700;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-b from-brawl-blue to-blue-600 hover:from-blue-400 hover:to-blue-500
+           text-white font-bold py-3 px-8 rounded-xl
+           shadow-brawl active:shadow-none active:translate-y-1
+           transition-all duration-150 uppercase tracking-wide
+           border-2 border-blue-700;
+  }
+
+  .btn-danger {
+    @apply bg-gradient-to-b from-brawl-red to-red-700 hover:from-red-500 hover:to-red-600
+           text-white font-bold py-3 px-8 rounded-xl
+           shadow-brawl active:shadow-none active:translate-y-1
+           transition-all duration-150 uppercase tracking-wide
+           border-2 border-red-800;
+  }
+
+  .input-field {
+    @apply bg-brawl-darker border-2 border-brawl-blue/50 text-white rounded-xl px-4 py-3
+           focus:outline-none focus:ring-2 focus:ring-brawl-yellow focus:border-brawl-yellow
+           placeholder:text-gray-400 font-sans;
+  }
+
+  .stat-card {
+    @apply bg-gradient-to-br from-brawl-card/80 to-brawl-darker rounded-xl p-4
+           border border-brawl-blue/20 hover:border-brawl-yellow/50
+           transition-all duration-300 hover:scale-105 hover:shadow-glow-yellow;
+  }
+
+  .trophy-badge {
+    @apply inline-flex items-center gap-1 bg-gradient-to-r from-brawl-yellow to-yellow-500
+           text-brawl-dark font-bold px-3 py-1 rounded-full text-sm shadow-brawl;
+  }
+
+  .rank-badge {
+    @apply inline-flex items-center justify-center w-8 h-8 rounded-full font-bold text-sm;
+  }
+
+  .victory {
+    @apply bg-gradient-to-br from-brawl-green to-green-600 text-white;
+  }
+
+  .defeat {
+    @apply bg-gradient-to-br from-brawl-red to-red-700 text-white;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-brawl-yellow uppercase tracking-wider
+           flex items-center gap-3 mb-6;
+  }
+
+  .section-title::before {
+    content: '';
+    @apply w-1 h-8 bg-brawl-yellow rounded-full;
+  }
+
+  .brawler-card {
+    @apply bg-gradient-to-br from-brawl-card to-brawl-darker rounded-xl p-4
+           border-2 border-transparent hover:border-brawl-yellow/50
+           transition-all duration-300 hover:scale-105 hover:shadow-glow-yellow
+           cursor-pointer;
+  }
+
+  .power-bar {
+    @apply h-2 rounded-full bg-brawl-darker overflow-hidden;
+  }
+
+  .power-bar-fill {
+    @apply h-full rounded-full bg-gradient-to-r from-brawl-blue to-brawl-purple;
+  }
+
+  .glow-text {
+    /* 光り効果を無効化 */
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #1BA5F5, #0f3460);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #FFC425, #F39C12);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
