@@ -171,21 +171,6 @@ Amplify Console → アプリ → 環境変数で以下を設定：
 | `BRAWL_STARS_API_KEY` | APIキー |
 | `NEXT_PUBLIC_ADSENSE_CLIENT_ID` | AdSense ID（任意） |
 
-### 3. ブランチ運用
-
-```
-main (本番環境 - production)
-  └── develop (開発環境 - staging)
-        └── feature/* (機能開発ブランチ)
-```
-
-- `feature/*` → `develop` へPR → 開発環境で確認
-- `develop` → `main` へPR → 本番環境にデプロイ
-
-### 4. カスタムドメイン（任意）
-
-Amplify Console → ドメイン管理で独自ドメインを設定可能
-
 ### 無料枠
 
 - ビルド: 1000分/月
